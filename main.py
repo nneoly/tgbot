@@ -391,6 +391,10 @@ def show_game_stats(message):
 def back_to_main(message):
     bot.send_message(message.chat.id, "Главное меню:", reply_markup=get_main_keyboard())
 
+@bot.message_handler(func=lambda message: message.text == 'Назад')
+def back_to_main_simple(message):
+    bot.send_message(message.chat.id, "Главное меню:", reply_markup=get_main_keyboard())
+
 def daily_check():
     while True:
         now = datetime.now()
